@@ -7,3 +7,20 @@
     <h1>Hello, World!</h1>
 </body>
 </html>
+<form>
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name">
+    <button type="submit">Submit</button>
+</form>
+<p id="greeting"></p>
+<script>
+    const form = document.querySelector('form');
+    const greeting = document.getElementById('greeting');
+
+    form.addEventListener('submit',   
+ (event) => {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        greeting.textContent = `Hello, ${name}!`;
+    });
+</script>
